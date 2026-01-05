@@ -1,6 +1,6 @@
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">assets/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyota | 自在放空，"慢"游生活</title>
     <style>
@@ -440,7 +440,7 @@
         .memory-card-back {
             background: linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%);
             border: 2px solid #b3b3b3;
-            background-image: url('/assets/nyota logo.png');
+            background-image: url('public/assets/nyota logo.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
