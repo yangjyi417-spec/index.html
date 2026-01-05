@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -227,7 +226,7 @@
             background-position: right;
         }
 
-        /* ==================== Nyota翻翻乐游戏样式 ==================== */
+        /* ==================== Nyota翻翻乐游戏样式（React版本 - 使用Nyota图片） ==================== */
         .memory-game-wrapper {
             max-width: 100%;
             padding: 20px;
@@ -235,55 +234,66 @@
         }
 
         .memory-game-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #FFF5E6 0%, #FFE4C4 100%);
+            background: linear-gradient(135deg, #FAF9F6 0%, #F5F5F5 100%);
             border-radius: 30px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(139, 105, 20, 0.2);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .memory-game-header {
             text-align: center;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(255, 200, 150, 0.3);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .memory-game-header h2 {
             font-size: 2.5rem;
-            color: #8B6914;
-            text-shadow: 2px 2px 4px rgba(139, 105, 20, 0.1);
-            margin-bottom: 15px;
+            color: #333333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .memory-game-logo {
+            max-width: 200px;
+            margin-bottom: 20px;
         }
 
         .memory-game-stats {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             font-size: 1.2rem;
-            color: #A0853D;
+            color: #666666;
         }
 
         .memory-game-stat-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .memory-game-stat-label {
+            font-size: 1rem;
         }
 
         .memory-game-stat-value {
             font-weight: bold;
-            font-size: 1.5rem;
-            color: #D4A76A;
+            font-size: 1.8rem;
+            color: #667eea;
         }
 
         .memory-game-board {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 12px;
-            padding: 10px;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
         }
 
         .memory-card {
@@ -298,7 +308,7 @@
             height: 100%;
             transform-style: preserve-3d;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 12px;
+            border-radius: 15px;
         }
 
         .memory-card.flipped .memory-card-inner {
@@ -314,37 +324,36 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 12px;
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 8px rgba(139, 105, 20, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .memory-card-front {
-            background: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             transform: rotateY(180deg);
-            border: 3px solid #DAA520;
+            border: 3px solid #764ba2;
+            overflow: hidden;
+        }
+
+        .memory-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .memory-card-back {
-            background: linear-gradient(135deg, #FFE4C4 0%, #DEB887 100%);
-            border: 3px solid #CD853F;
+            background: linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%);
+            border: 3px solid #b3b3b3;
         }
 
         .memory-card-back::before {
-            content: '🌟';
-            font-size: 2.5rem;
-            animation: memoryTwinkle 1.5s infinite;
-        }
-
-        .memory-card-emoji {
-            font-size: 2.5rem;
-        }
-
-        @keyframes memoryTwinkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(0.9); }
+            content: '?';
+            font-size: 3rem;
+            color: #667eea;
+            font-weight: bold;
         }
 
         @keyframes memoryMatchPulse {
@@ -357,7 +366,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .memory-game-btn {
@@ -368,29 +377,29 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .memory-game-btn-primary {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #8B4513;
-            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
         .memory-game-btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
 
         .memory-game-btn-secondary {
-            background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
-            color: #8B008B;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #333;
+            box-shadow: 0 4px 15px rgba(252, 182, 159, 0.4);
         }
 
         .memory-game-btn-secondary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+            box-shadow: 0 6px 20px rgba(252, 182, 159, 0.6);
         }
 
         .memory-game-modal {
@@ -411,12 +420,13 @@
         }
 
         .memory-game-modal-content {
-            background: linear-gradient(135deg, #FFF8DC 0%, #FFE4B5 100%);
-            padding: 40px;
+            background: linear-gradient(135deg, #FAF9F6 0%, #F5F5F5 100%);
+            padding: 50px;
             border-radius: 30px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(139, 105, 20, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             animation: memoryModalPop 0.5s ease-out;
+            max-width: 500px;
         }
 
         @keyframes memoryModalPop {
@@ -426,13 +436,13 @@
 
         .memory-game-modal-content h3 {
             font-size: 2.5rem;
-            color: #8B6914;
+            color: #333333;
             margin-bottom: 20px;
         }
 
         .memory-game-modal-content p {
             font-size: 1.5rem;
-            color: #A0853D;
+            color: #666666;
             margin-bottom: 30px;
         }
 
@@ -448,6 +458,26 @@
         @keyframes memoryConfettiFall {
             0% {
                 transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+            animation: confettiFall 4s ease-out forwards;
+            z-index: 1000;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
                 opacity: 1;
             }
             100% {
@@ -597,15 +627,19 @@
 
             .memory-game-board {
                 grid-template-columns: repeat(4, 1fr);
-                gap: 8px;
-            }
-
-            .memory-card-emoji {
-                font-size: 1.8rem;
+                gap: 10px;
             }
 
             .memory-card-back::before {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+
+            .memory-game-stats {
+                gap: 20px;
+            }
+
+            .memory-game-stat-value {
+                font-size: 1.5rem;
             }
 
             .memory-game-btn {
@@ -617,11 +651,11 @@
         @media (max-width: 480px) {
             .memory-game-board {
                 grid-template-columns: repeat(4, 1fr);
-                gap: 6px;
+                gap: 8px;
             }
 
-            .memory-card-emoji {
-                font-size: 1.4rem;
+            .memory-card-back::before {
+                font-size: 1.5rem;
             }
 
             .memory-game-stats {
@@ -637,8 +671,17 @@
                 font-size: 0.9rem;
             }
 
-            .memory-card-back::before {
-                font-size: 1.4rem;
+            .memory-game-modal-content {
+                padding: 30px;
+                max-width: 90%;
+            }
+
+            .memory-game-modal-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .memory-game-modal-content p {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -702,23 +745,16 @@
             </div>
         </div>
 
-        <!-- Nyota翻翻乐游戏 -->
+        <!-- Nyota翻翻乐游戏（React版本 - 使用Nyota图片） -->
         <div class="memory-game-wrapper">
             <div class="memory-game-container">
                 <div class="memory-game-header">
+                    <img src="/assets/nyota logo.png" alt="Nyota Logo" class="memory-game-logo">
                     <h2>🎮 Nyota翻翻乐 🎮</h2>
                     <div class="memory-game-stats">
                         <div class="memory-game-stat-item">
-                            <span>移动:</span>
-                            <span class="memory-game-stat-value" id="memoryMoves">0</span>
-                        </div>
-                        <div class="memory-game-stat-item">
-                            <span>配对:</span>
+                            <span class="memory-game-stat-label">配对:</span>
                             <span class="memory-game-stat-value" id="memoryMatches">0/10</span>
-                        </div>
-                        <div class="memory-game-stat-item">
-                            <span>时间:</span>
-                            <span class="memory-game-stat-value" id="memoryTimer">00:00</span>
                         </div>
                     </div>
                 </div>
@@ -726,8 +762,8 @@
                 <div class="memory-game-board" id="memoryGameBoard"></div>
 
                 <div class="memory-game-controls">
-                    <button class="memory-game-btn memory-game-btn-primary" onclick="MemoryGame.startGame()">重新开始</button>
-                    <button class="memory-game-btn memory-game-btn-secondary" onclick="MemoryGame.enableSound()">🔊 开启音效</button>
+                    <button class="memory-game-btn memory-game-btn-primary" onclick="NyotaMemoryGame.resetGame()">重新开始</button>
+                    <button class="memory-game-btn memory-game-btn-secondary" onclick="NyotaMemoryGame.enableSound()">🔊 开启音效</button>
                 </div>
             </div>
         </div>
@@ -735,9 +771,8 @@
         <div class="memory-game-modal" id="memoryWinModal">
             <div class="memory-game-modal-content">
                 <h3>🎉 恭喜胜利！🎉</h3>
-                <p>你用时 <span id="memoryFinalTime">00:00</span> 完成了游戏！</p>
-                <p>移动次数: <span id="memoryFinalMoves">0</span></p>
-                <button class="memory-game-btn memory-game-btn-primary" onclick="MemoryGame.startGame(); MemoryGame.closeModal();">再来一局</button>
+                <p>你成功配对了所有Nyota形象！</p>
+                <button class="memory-game-btn memory-game-btn-primary" onclick="NyotaMemoryGame.resetGame(); NyotaMemoryGame.closeModal();">再来一局</button>
             </div>
         </div>
 
@@ -844,18 +879,30 @@
             document.querySelector('.main-scene').style.display = 'block';
         }
 
-        // ==================== Nyota翻翻乐游戏逻辑 ====================
-        const MemoryGame = {
-            emojis: ['🦄', '🌸', '🎀', '💎', '🌟', '🦋', '🌈', '🍀', '💝', '⭐'],
+        // ==================== Nyota翻翻乐游戏逻辑（React版本 - 使用Nyota图片） ====================
+        const NyotaMemoryGame = {
+            TOTAL_TYPES: 10,
+            PAIRS: 2,
             cards: [],
             flippedCards: [],
             matchedPairs: 0,
-            moves: 0,
-            gameStarted: false,
-            timerInterval: null,
-            seconds: 0,
+            isFlipping: false,
             soundEnabled: false,
             audioContext: null,
+
+            // 10个Nyota形象图片文件名
+            nyotaImages: [
+                "0f7f1759b6a820b790bd67eacb9b9733.png",
+                "8e70d5192c2937f9d18550d04ebf8ca5.png",
+                "9b87499cf40bdb14bd095dbadefccbaa.png",
+                "25b8589d855f13a435034fd71b17b008.png",
+                "28d2c46bbebb67fa10b77b17e3167ba6.png",
+                "050c47ccd62a7b04a75d5eb3f9108d97.png",
+                "64b28ad76f9cffed68f0721654f8e065.png",
+                "330ec6028e0d1d45ec76609ad0ee8b2b.png",
+                "437bcdb0d6eb81a9330f50b8c9faed14.png",
+                "93532ad49b7d091eb1b5025f501280de.png"
+            ],
 
             initAudioContext: function() {
                 if (!this.audioContext) {
@@ -914,13 +961,18 @@
             },
 
             createCards: function() {
-                const cardPairs = [...this.emojis, ...this.emojis];
-                return this.shuffle(cardPairs).map((emoji, index) => ({
-                    id: index,
-                    emoji: emoji,
-                    isFlipped: false,
-                    isMatched: false
-                }));
+                let cardData = [];
+                for (let i = 0; i < this.TOTAL_TYPES * this.PAIRS; i++) {
+                    const type = Math.floor(i / this.PAIRS);
+                    cardData.push({
+                        id: i,
+                        type: type,
+                        number: i + 1,
+                        isFlipped: false,
+                        isMatched: false
+                    });
+                }
+                return this.shuffle(cardData);
             },
 
             renderCards: function() {
@@ -934,7 +986,7 @@
                     cardElement.innerHTML = `
                         <div class="memory-card-inner">
                             <div class="memory-card-front">
-                                <span class="memory-card-emoji">${card.emoji}</span>
+                                <img src="/assets/${this.nyotaImages[card.type]}" alt="Nyota" />
                             </div>
                             <div class="memory-card-back"></div>
                         </div>
@@ -943,54 +995,63 @@
                 });
             },
 
-            flipCard: function(cardId) {
-                if (!this.gameStarted) {
-                    this.startTimer();
-                    this.gameStarted = true;
-                }
-                const card = this.cards[cardId];
-                if (card.isFlipped || card.isMatched || this.flippedCards.length >= 2) return;
+            flipCard: function(index) {
+                if (this.isFlipping) return;
+
+                const card = this.cards[index];
+                if (card.isFlipped || card.isMatched) return;
 
                 card.isFlipped = true;
-                this.flippedCards.push(card);
+                this.flippedCards.push(index);
                 this.playFlipSound();
 
-                const cardElement = document.querySelector(`[data-id="${cardId}"]`);
+                const cardElement = document.querySelector(`[data-id="${index}"]`);
                 cardElement.classList.add('flipped');
 
                 if (this.flippedCards.length === 2) {
-                    this.moves++;
-                    this.updateStats();
+                    this.isFlipping = true;
                     this.checkMatch();
                 }
             },
 
             checkMatch: function() {
-                const [card1, card2] = this.flippedCards;
+                const [index1, index2] = this.flippedCards;
+                const card1 = this.cards[index1];
+                const card2 = this.cards[index2];
 
-                if (card1.emoji === card2.emoji) {
-                    card1.isMatched = true;
-                    card2.isMatched = true;
-                    this.matchedPairs++;
-                    this.playMatchSound();
+                if (card1.type === card2.type) {
+                    // 匹配成功
+                    setTimeout(() => {
+                        card1.isMatched = true;
+                        card2.isMatched = true;
+                        this.matchedPairs++;
+                        this.playMatchSound();
 
-                    document.querySelector(`[data-id="${card1.id}"]`).classList.add('matched');
-                    document.querySelector(`[data-id="${card2.id}"]`).classList.add('matched');
+                        document.querySelector(`[data-id="${index1}"]`).classList.add('matched');
+                        document.querySelector(`[data-id="${index2}"]`).classList.add('matched');
 
-                    this.flippedCards = [];
+                        this.flippedCards = [];
+                        this.isFlipping = false;
 
-                    if (this.matchedPairs === 10) {
-                        setTimeout(() => this.showWinModal(), 500);
-                    }
+                        if (this.matchedPairs === this.TOTAL_TYPES) {
+                            setTimeout(() => {
+                                this.showWinModal();
+                                this.playWinSound();
+                                this.createConfetti();
+                            }, 500);
+                        }
+                    }, 500);
                 } else {
+                    // 匹配失败
                     setTimeout(() => {
                         card1.isFlipped = false;
                         card2.isFlipped = false;
 
-                        document.querySelector(`[data-id="${card1.id}"]`).classList.remove('flipped');
-                        document.querySelector(`[data-id="${card2.id}"]`).classList.remove('flipped');
+                        document.querySelector(`[data-id="${index1}"]`).classList.remove('flipped');
+                        document.querySelector(`[data-id="${index2}"]`).classList.remove('flipped');
 
                         this.flippedCards = [];
+                        this.isFlipping = false;
                     }, 1000);
                 }
 
@@ -998,31 +1059,10 @@
             },
 
             updateStats: function() {
-                document.getElementById('memoryMoves').textContent = this.moves;
-                document.getElementById('memoryMatches').textContent = `${this.matchedPairs}/10`;
-            },
-
-            startTimer: function() {
-                this.seconds = 0;
-                this.timerInterval = setInterval(() => {
-                    this.seconds++;
-                    const minutes = Math.floor(this.seconds / 60).toString().padStart(2, '0');
-                    const secs = (this.seconds % 60).toString().padStart(2, '0');
-                    document.getElementById('memoryTimer').textContent = `${minutes}:${secs}`;
-                }, 1000);
-            },
-
-            stopTimer: function() {
-                clearInterval(this.timerInterval);
+                document.getElementById('memoryMatches').textContent = `${this.matchedPairs}/${this.TOTAL_TYPES}`;
             },
 
             showWinModal: function() {
-                this.stopTimer();
-                this.playWinSound();
-                this.createConfetti();
-
-                document.getElementById('memoryFinalTime').textContent = document.getElementById('memoryTimer').textContent;
-                document.getElementById('memoryFinalMoves').textContent = this.moves;
                 document.getElementById('memoryWinModal').classList.add('show');
             },
 
@@ -1031,31 +1071,33 @@
             },
 
             createConfetti: function() {
-                const colors = ['#FFD700', '#FF69B4', '#00CED1', '#FF6347', '#98FB98', '#DDA0DD'];
-                for (let i = 0; i < 100; i++) {
+                const colors = ['#FFB6C1', '#FFDAB9', '#FFFDD0', '#FFE4B5', '#FFA07A', '#F0E68C', '#FF69B4'];
+                for (let i = 0; i < 50; i++) {
                     setTimeout(() => {
                         const confetti = document.createElement('div');
-                        confetti.className = 'memory-game-confetti';
+                        confetti.className = 'confetti';
+                        confetti.style.position = 'fixed';
+                        confetti.style.width = '10px';
+                        confetti.style.height = '10px';
+                        confetti.style.top = '-10px';
                         confetti.style.left = Math.random() * 100 + 'vw';
                         confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                        confetti.style.animation = `confetti ${Math.random() * 2 + 2}s ease-out forwards`;
+                        confetti.style.zIndex = '1000';
                         document.body.appendChild(confetti);
 
-                        setTimeout(() => confetti.remove(), 3000);
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 4000);
                     }, i * 30);
                 }
             },
 
-            startGame: function() {
-                this.stopTimer();
+            resetGame: function() {
                 this.cards = this.createCards();
                 this.flippedCards = [];
                 this.matchedPairs = 0;
-                this.moves = 0;
-                this.gameStarted = false;
-                this.seconds = 0;
-
-                document.getElementById('memoryTimer').textContent = '00:00';
+                this.isFlipping = false;
                 this.updateStats();
                 this.renderCards();
             }
@@ -1063,7 +1105,7 @@
 
         // 页面加载完成后初始化
         window.addEventListener('load', function() {
-            MemoryGame.startGame();
+            NyotaMemoryGame.resetGame();
         });
     </script>
 </body>
