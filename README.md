@@ -1,4 +1,9 @@
-</head>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyota | 自在放空，"慢"游生活</title>
     <style>
         * {
@@ -1225,7 +1230,7 @@
 
             initBackgroundMusic: function() {
                 if (!this.backgroundMusic) {
-                    this.backgroundMusic = new Audio('/index.html/public/assets/放松 露营 周末 轻快 旅行 vlog日常 做饭 治愈_爱给网_aigei_com.mp3');
+                    this.backgroundMusic = new Audio('/assets/放松 露营 周末 轻快 旅行 vlog日常 做饭 治愈_爱给网_aigei_com.mp3');
                     this.backgroundMusic.loop = true;
                     this.backgroundMusic.volume = 0.5;
 
@@ -1331,7 +1336,7 @@
                     front.className = 'memory-card-front';
 
                     const img = document.createElement('img');
-                    img.src = '/public/assets/' + this.nyotaImages[card.type];
+                    img.src = '/assets/' + this.nyotaImages[card.type];
                     img.alt = 'Nyota';
                     front.appendChild(img);
 
