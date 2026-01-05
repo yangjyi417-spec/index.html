@@ -889,6 +889,8 @@
             isFlipping: false,
             soundEnabled: false,
             audioContext: null,
+            
+img src="public/intro-logo.png" alt="logo"
 
             // 10个Nyota形象图片文件名
             nyotaImages: [
